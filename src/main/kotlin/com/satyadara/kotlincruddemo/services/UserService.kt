@@ -8,4 +8,5 @@ interface UserService {
     fun save(user: User): User
     fun update(user: User, id: String): User
     fun delete(id: String)
+    fun searchByAge(age: Int) : List<User>
 }

@@ -46,4 +46,11 @@ data class UserController(@Autowired val userService: UserService) {
         userService.delete(id)
         return "DELETED"
     }
+
+    @RequestMapping(value = ["/search-by-age"],
+            method = [RequestMethod.GET],
+            produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun searchByAge(@RequestParam("age") age: Int): List<User> {
+        return userService.searchByAge(age)
+    }
 }

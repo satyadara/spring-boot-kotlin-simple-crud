@@ -32,4 +32,7 @@ data class UserServiceImpl(@Autowired val userRepository: UserRepository) : User
         userRepository.delete(userRepository.getOne(id))
     }
 
+    override fun searchByAge(age: Int): List<User> {
+        return userRepository.findAllByAge(age)
+    }
 }
